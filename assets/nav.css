@@ -1,0 +1,144 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+}
+nav {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0rem 7rem;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 99999;
+  background-color: #212121;
+}
+
+.links a {
+  text-decoration: none;
+  color: white;
+  margin: 9px;
+}
+
+.links a:hover {
+  color: #d30202;
+}
+
+.logo-container {
+  margin: 0.6rem;
+  display: flex;
+}
+
+nav a {
+  text-decoration: none;
+}
+
+nav a .nama .atas, .bawah {
+  color: white;
+  margin-left: 9px;
+}
+
+.atas {
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.bawah {
+  font-weight: 100;
+  font-size: 0.8rem;
+  letter-spacing: 9px;
+}
+
+.logo-container img {
+  width: 50px;
+  height: 50px;
+  
+}
+.links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+  position: fixed;
+  top: 0;
+  left: 200%;
+  z-index: 25;
+}
+.links.show {
+  left: 0;
+  padding: 6rem 1rem 1rem;
+  background-color: #191a19f2;
+  height: 100vh;
+  width: 100%;
+}
+.links.show a {
+  color: white;
+  width: 100%;
+  padding: 1rem 0;
+  text-align: center;
+}
+.menu {
+  --height: 4px;
+  --width: 16px;
+  --bg: #191a19;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  align-items: flex-end;
+  cursor: pointer;
+  position: absolute;
+  right: 1.35rem;
+  z-index: 50;
+}
+.menu.opened {
+  --bg: white;
+}
+.menu .middle {
+  height: var(--height);
+  width: var(--width);
+  background-color: var(--bg);
+}
+.menu::before,
+.menu::after {
+  content: "";
+  background-color: var(--bg);
+  height: var(--height);
+  transition: 0.2s ease-in-out;
+}
+.menu::before {
+  width: calc(var(--width) / 2);
+}
+.menu::after {
+  width: calc(var(--width) * 1.5);
+}
+.menu.opened::before {
+  width: calc(var(--width) * 1.5);
+}
+.menu.opened::after {
+  width: calc(var(--width) / 2);
+}
+
+@media screen and (min-width: 1025px) {
+  nav {
+    justify-content: space-between;
+  }
+  .menu {
+    display: none;
+  }
+  .links {
+    position: static;
+    flex-direction: row;
+    gap: 1rem;
+  }
+}
+@media (max-width: 768px) {
+  nav {
+    padding: 0px 2rem;
+  }
+
+}
