@@ -1,3 +1,8 @@
+import { gsap } from "gsap";
+
+gsap.to("#logo-container", { x: 300, duration: 1 });
+
+
 window.addEventListener("load", enableMobileMenu);
 window.addEventListener("resize", enableMobileMenu);
 
@@ -14,3 +19,5 @@ function enableMobileMenu() {
     if (links.classList.contains("show")) links.classList.remove("show");
   }
 }
+
+
